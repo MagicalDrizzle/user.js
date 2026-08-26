@@ -129,7 +129,7 @@ user_pref("browser.discovery.enabled", false);
 user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
 user_pref("browser.newtabpage.activity-stream.telemetry", false);
 
-/** STUDIES ***/
+/** STUDIES/ROLLOUTS ***/
 /* 0340: disable Studies
  * [SETTING] Permissions and data>Firefox data collection and use>Allow Firefox to run feature studies ***/
 user_pref("app.shield.optoutstudies.enabled", false);
@@ -138,6 +138,9 @@ user_pref("app.shield.optoutstudies.enabled", false);
  * [1] https://mozilla.github.io/normandy/ ***/
 user_pref("app.normandy.enabled", false);
 user_pref("app.normandy.api_url", "");
+/* 0342: disable rollouts [FF148+]
+ * [SETTING] Permissions and data>Firefox data collection and use>Allow Firefox to improve... between updates ***/
+user_pref("nimbus.rollouts.enabled", false);
 
 /** CRASH REPORTS ***/
 /* 0350: disable Crash Reports ***/
@@ -801,8 +804,9 @@ user_pref("_user.js.parrot", "4000 syntax error: the parrot's bereft of life!");
        previously FF55+ it returned 2
    1999126 - enforce navigator.pdfViewerEnabled as true and plugins/mimeTypes as hard-coded values (FF147)
    2047612 - enforce IME styling in EditContext API (FF154)
-   2059465 - disable ScreenOrientation lock on Windows (156?)
-   2045882 - enforce sRGB in canvas (FF156?)
+   2059465 - disable ScreenOrientation lock on Windows (FF156)
+   2063031 - spoof video picture-in-picture size at 640x270 (FF156)
+   2045882 - enforce sRGB in canvas (FF157?)
 ***/
 user_pref("_user.js.parrot", "4500 syntax error: the parrot's popped 'is clogs");
 /* 4501: enable RFP
@@ -884,7 +888,7 @@ user_pref("_user.js.parrot", "5000 syntax error: the parrot's taken 'is last bow
    // user_pref("browser.cache.memory.capacity", 0);
 /* 5003: disable saving passwords
  * [NOTE] This does not clear any passwords already saved
- * [SETTING] Privacy & Security>Logins and Passwords>Ask to save logins and passwords for websites ***/
+ * [SETTING] Passwords and autofill>Passwords>Ask to save passwords ***/
    // user_pref("signon.rememberSignons", false);
 /* 5004: disable permissions manager from writing to disk [FF41+] [RESTART]
  * [NOTE] This means any permission changes are session only
@@ -930,17 +934,18 @@ user_pref("_user.js.parrot", "5000 syntax error: the parrot's taken 'is last bow
    // user_pref("browser.taskbar.lists.frequent.enabled", false);
    // user_pref("browser.taskbar.lists.recent.enabled", false);
    // user_pref("browser.taskbar.lists.tasks.enabled", false);
-/* 5016: discourage downloading to desktop
+/* 5015: discourage downloading to desktop
  * 0=desktop, 1=downloads (default), 2=custom
  * [SETTING] To set your custom default "downloads": General>Downloads>Save files to ***/
    // user_pref("browser.download.folderList", 2);
-/* 5017: disable Form Autofill
- * If .supportedCountries includes your region (browser.search.region) and .supported
- * is "detect" (default), then the UI will show. Stored data is not secure, uses JSON
- * [SETTING] Privacy & Security>Forms and Autofill>Autofill addresses
+/* 5016: disable Address autofill [FF55+]
+ * [SETTING] Passwords and autofill>Payment methods>Save and autofill payment info
  * [1] https://wiki.mozilla.org/Firefox/Features/Form_Autofill ***/
-   // user_pref("extensions.formautofill.addresses.enabled", false); // [FF55+]
-   // user_pref("extensions.formautofill.creditCards.enabled", false); // [FF56+]
+   // user_pref("extensions.formautofill.addresses.enabled", false);
+/* 5017: disable Payment autofill [FF56+]
+ * [SETTING] Passwords and autofill>Addresses and more>Save and aufofill addresses
+ * [1] https://wiki.mozilla.org/Firefox/Features/Form_Autofill ***/
+   // user_pref("extensions.formautofill.creditCards.enabled", false);
 /* 5018: limit events that can cause a pop-up ***/
    // user_pref("dom.popup_allowed_events", "click dblclick mousedown pointerdown");
 /* 5019: disable page thumbnail collection ***/
