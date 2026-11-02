@@ -1,4 +1,4 @@
-This repo and the interative webpage linked below are the **_only official sources_** - do not trust any other sites claiming to be Arkenfox
+This repo and the interactive webpage linked below are the **_only official sources_** - do not trust any other sites claiming to be Arkenfox
 
 ### 🟪  user.js
 A `user.js` is a configuration file that can control Firefox settings - for a more technical breakdown and explanation, you can read more in the [wiki](https://github.com/arkenfox/user.js/wiki/2.1-User.js)
@@ -8,6 +8,8 @@ A `user.js` is a configuration file that can control Firefox settings - for a mo
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 The `arkenfox user.js` is a **template** which aims to provide as much privacy and enhanced security as possible, and to reduce tracking and fingerprinting as much as possible - while minimizing any loss of functionality and breakage (but it will happen).
+
+Firefox's built-in profile feature (enabled since FF150) can copy some preferences across profiles, including data-reporting and Health Reports preferences set by this template. Do not assume these settings are independent per profile; review <code>Permissions and data > Firefox data collection and use</code> in Firefox Settings and verify the shared behavior. The exact shared-preference list is Firefox-version-dependent. See [1933264](https://bugzilla.mozilla.org/show_bug.cgi?id=1933264) and [permanentSharedPrefs](https://searchfox.org/firefox-main/source/browser/components/profiles/SelectableProfileService.sys.mjs#366).
 
 Everyone, experts included, should at least read the [wiki](https://github.com/arkenfox/user.js/wiki), as it contains important information regarding a few `user.js` settings. There is also an [interactive current release](https://arkenfox.github.io/gui/), thanks to [icpantsparti2](https://github.com/icpantsparti2).
 
